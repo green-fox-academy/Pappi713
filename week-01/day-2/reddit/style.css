@@ -1,0 +1,39 @@
+header{
+    background-color: grey;
+}
+
+header>h1, section{
+    margin: 0px 300px;
+}
+.title {
+
+    padding-bottom: 0;
+}
+article{
+    border: 3px solid black;
+}
+.title{
+    font-weight: bold;
+}
+.content{
+    font-weight: bold;
+}
+body{
+    border: 3px solid grey;
+    padding: 0px;
+    margin: 0px;
+    background-image:url("lorem.jpg");
+}
+.submit{
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 3px 20px;
+}
+.ptitle{
+    font-weight: bold;
+    font-size: 30px;
+}
+article, p{
+    padding: 0px;
+    color: red;
+}
