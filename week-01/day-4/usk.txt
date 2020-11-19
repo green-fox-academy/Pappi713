@@ -1,0 +1,8 @@
+ctrl + alt + l:kód formázása
+ctrl + s: save
+ctrl + /: kijelölt terület kommentelése
+ctrl + d: másolás
+shift +f6: változó átnevezése mindenhol
+ctrl + f8: breaking point
+shift + f9: debugger
+alt + shift + nyilak : sor mozgatása
