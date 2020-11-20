@@ -10,7 +10,7 @@ public class SubStrTwo {
         System.out.println("Where you want to search it?");
         String str = scanner.next();*/
 
-        System.out.println(subStr("", "a"));
+        System.out.println(subStr("", ""));
 
 
     }
@@ -18,6 +18,7 @@ public class SubStrTwo {
     public static int subStr(String input, String q) {
         //String substring(int beginIndex, int endIndex)
         //operation.equals("q")
+        if(input.equals("")) return -1;
         int strLength = input.length();
         int subLength = q.length();
         int sStart;
