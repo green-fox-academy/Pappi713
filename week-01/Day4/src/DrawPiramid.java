@@ -13,15 +13,22 @@ public class DrawPiramid {
         //
         // The pyramid should have as many lines as the number was
 
-        int rows;
-        int k = 0;
-        Scanner scanner = new Scanner(System.in);
-        rows = scanner.nextInt();
 
-        for (int i = 1; i <= rows; i++, k = 0) {
-            for (int j = 1; j <= rows-1; j++) {
-                System.out.print("");
+        //I did it some help since after 1,5 hour stil could not figure out.
+        int rows=7;
+        int k=0;
+        /*System.out.println("Plox gimme the size of the piramid!!!");
+        Scanner scanner = new Scanner(System.in);
+        rows = scanner.nextInt();*/
+        for (int i = 1; i <= rows; i++, k=0) {
+            for (int j = 1; j <= rows-i; j++) {
+                System.out.print("  ");
             }
+            while(k != 2 * i - 1) {
+                System.out.print("* ");
+                ++k;
+            }
+            System.out.println("");
         }
     }
 }
