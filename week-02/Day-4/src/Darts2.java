@@ -30,7 +30,7 @@ public class Darts2 {
         drawlines(graphics);
     }
 
-    private static void finalbullshit(Graphics graphics) {
+    private static void finalbullshit(Graphics graphics ) {
         int startAngleB=9;
         int startAngleW=27;
         int step=18;
