@@ -8,6 +8,9 @@ public class Aircraft {
     public Integer getMaxAmmo() {
         return null;
     }
+    public void setCurrentAmmo(Integer currentAmmo){
+        this.currentAmmo=currentAmmo;
+    }
 
     public Integer getBaseDamage() {
         return null;
@@ -18,7 +21,7 @@ public class Aircraft {
     }
 
     public String getStatus() {
-        return "Type " + getType() + ", Ammo: " + currentAmmo + ", Base damage: " + getBaseDamage() + ": All Damage: " + fight();
+        return "Type " + getType() + ", Ammo: " + currentAmmo + ", Base damage: " + getBaseDamage() + ": All Damage: " + (currentAmmo*getBaseDamage());
     }
 
     public Boolean isPriority() {
@@ -31,9 +34,17 @@ public class Aircraft {
         return Damage;
     }
     public Integer refill(Integer allAmmo){
-        currentAmmo =getMaxAmmo();
-        allAmmo-=getMaxAmmo();
-        return allAmmo;
+        if(allAmmo>=getMaxAmmo()-currentAmmo){
+            currentAmmo+=getMaxAmmo();
+            return allAmmo-getMaxAmmo();
+        }
+        else{
+            currentAmmo=currentAmmo+allAmmo;
+            return 0;
+        }
     }
 
+    public Integer getCurrentAmmo() {
+        return currentAmmo;
+    }
 }

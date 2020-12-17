@@ -11,7 +11,7 @@ public class F16 extends Aircraft {
     }
 
     public String getType() {
-        return "F16";
+        return this.getClass().getSimpleName();
     }
 
     public Boolean isPriority() {

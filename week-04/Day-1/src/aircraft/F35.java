@@ -11,7 +11,7 @@ public class F35 extends Aircraft {
     }
 
     public String getType() {
-        return "F35";
+        return this.getClass().getSimpleName();
     }
 
     public Boolean isPriority() {
