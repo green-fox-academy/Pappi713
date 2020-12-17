@@ -71,6 +71,7 @@ public class WarMapWithMap {
         @Override
         protected void paintComponent(Graphics graphics) {
             super.paintComponent(graphics);
+            //setBackground(Color.cyan);
             mainDraw(graphics);
 
         }

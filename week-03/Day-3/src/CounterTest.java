@@ -18,7 +18,7 @@ class CounterTest {
 
     @Test
     void addOne() {
-        c.add();
+        c.add(1);
         assertEquals(1, c.get());
     }
 
@@ -35,7 +35,7 @@ class CounterTest {
 
     @Test
     void resetToZero() {
-        c.add();
+        c.add(1);
         c.reset();
         assertEquals(0, c.get());
     }
