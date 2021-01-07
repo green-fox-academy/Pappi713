@@ -1,0 +1,10 @@
+table{
+    border: 2px solid red;
+    background-color: yellow;
+}
+.king{
+    background-color: chocolate;
+}
+.none{
+    color: green;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<table><tr><th>Id</th><th>Name</th><th>Balance</th><th>AnimaType</th><th>PersonType</th></tr>
+    <tr th:class="${account.getStyle()}" th:each="account: ${accounts}">
+    <td th:text="${accountStat.index+1}+'.'"></td>
+    <td th:text="${account.name}"></td>
+    <td th:text="${account.balance}"></td>
+    <td th:text="${account.animalType}"></td>
+    <td th:text="${account.isGood} ? 'Good Person' : 'Bad Person'">  </td>
+    </tr>
+</table>
+</body>
+</html>

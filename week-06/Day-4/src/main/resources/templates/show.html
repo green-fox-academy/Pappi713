@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+Name: <span th:text="${name}"/><br>
+Balance: <span th:text="${balance}+' Zebra'"/><br>
+AnimalType: <span th:text="${animalType}"/><br>
+</body>
+</html>
