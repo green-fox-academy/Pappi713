@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1><a th:href="@{/}">My Shop</a></h1>
+<br>
+<hr>
+<span class="buttons">
+    <form action="/only-available" method="get"><input type="submit" value="ONLY AVAILABLE" name="only-available"></form>
+    <form action="/cheapest-first" method="get"><input type="submit" value="CHEAPEST FIRST" name="cheapest-first"></form>
+    <form action="/contains-bojler" method="get"><input type="submit" value="CONTAINS BOJLER" name="contains-bojler"></form>
+    <form action="/average-stock" method="get"><input type="submit" value="AVAREGE STOCK" name="average-stock"></form>
+    <form action="/most-expensive" method="get"><input type="submit" value="MOST EXPENSIVE AVAILABLE" name="/most-expensive"></form>
+</span>
+<div class="search">
+    <form action="/search"  method="post">
+        <label for="search">Search for:</label><br>
+        <input type="text"  name="search" id="search" placeholder="...Someting like brain" size="60" height="20px">
+        <button type="submit">Search</button>
+    </form>
+</div>
+<h1 th:text="${specificinfo}" style="color: black"></h1>
+</body>
+</html>

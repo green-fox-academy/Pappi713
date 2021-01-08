@@ -1,0 +1,72 @@
+h1 {
+    color: deepskyblue;
+}
+
+body {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+table{
+    width: available;
+}
+table,tr,td,th{
+    background-color: white;
+    width: auto;
+    padding: 20px;
+    margin: auto;;
+}
+th{
+    background-color: deepskyblue;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.center{
+    text-align: center;
+}
+table{
+    width: 900px;
+}
+.buttons{
+    width: auto;
+    padding: 5px;
+    text-align: center;
+    display: inline;
+}
+.buttons input, .search #searchbutton {
+    background-color: red;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border-color: red;
+}
+.search{
+    width: 900px;
+    padding: 0 20px;
+}
+#search{
+    height: 30px;
+    border-color: red;
+    font-size: large;
+}
+#id{
+    width: 1000px
+}
+#searchbutton{
+    font-size: larger;
+    font-weight: bold;
+    width: 200px;
+    height: 35px;
+    margin-left: 50px;
+}
+label{
+    color: red;
+    padding: 0;
+}
+tbody{
+    color: green;
+}
+form{
+    display: inline-block;
+}
