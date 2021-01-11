@@ -14,6 +14,9 @@ public class ShopItem {
     public Double getPrice() {
         return price;
     }
+    public void SetPriceToEuro(double multiplier){
+        price=price*multiplier;
+    }
 
     public Integer getQuantityOfStock() {
         return quantityOfStock;
@@ -23,11 +26,18 @@ public class ShopItem {
     private Double price;
     private Integer quantityOfStock;
 
-    public ShopItem(String name, String description, Double price, Integer quantityOfStock) {
+    public String getType() {
+        return type;
+    }
+
+    private String type;
+
+    public ShopItem(String name, String description, Double price, Integer quantityOfStock, String type) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.quantityOfStock = quantityOfStock;
+        this.type = type;
     }
 
     public String priceWithValute(){

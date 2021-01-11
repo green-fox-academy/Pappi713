@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1><a th:href="@{/}">My Shop</a>  <a class="more" th:href="@{/more}">More>></a></h1>
+<br>
+<hr>
+<span class="buttons">
+    <form action="/indoor" method="get"><input type="submit" value="INDOOR" name="indoor"></form>
+    <form action="/quality-of-life" method="get"><input type="submit" value="QUALITY OF LIFE" name="quality-of-life"></form>
+    <form action="/outdoor" method="get"><input type="submit" value="OUTDOOR" name="outdoor"></form>
+    <form action="/euro" method="get"><input type="submit" value="CHANGE TO EURO" name="euro"></form>
+    <form action="/czk" method="get"><input type="submit" value="CHANGE TO CSEH KORONA" name="czk"></form>
+
+</span>
+<div class="search">
+        <form action="/above" method="post"><input type="submit" value="ABOVE" name="above"></form>
+        <form action="/below" method="post"><input type="submit" value="BELOVE" name="belove"></form>
+        <form action="/exactly" method="post"><input type="submit" value="EXACTLY" name="exactly"></form>
+        <label for="search">Search for:</label><br>
+        <input type="text"  name="search" id="search" placeholder="...Someting like brain" size="20" height="20px">
+</div>
+<table>
+    <thead>
+    <tr><th>Name</th><th>Type</th><th>Description</th><th class="center">Price</th><th class="center">Quantity</th></tr>
+    </thead>
+    <tbody class="asd">
+    <tr  th:each="item: ${items}">
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.type}"></td>
+        <td th:text="${item.description}"></td>
+        <td th:text="${item.priceWithValute()}" class="center"></td>
+        <td th:text="${item.quantityOfStock}" class="center"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

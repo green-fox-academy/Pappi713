@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
 </head>
 <body>
-<h1><a th:href="@{/}">My Shop</a></h1>
+<h1><a th:href="@{/}">My Shop</a>  <a class="more" th:href="@{/more}">More>></a></h1>
 <br>
 <hr>
 <span class="buttons">
@@ -25,11 +25,12 @@
 </div>
 <table>
     <thead>
-    <tr><th>Name</th><th>Description</th><th class="center">Price</th><th class="center">Quantity</th></tr>
+    <tr><th>Name</th><th>Type</th><th>Description</th><th class="center">Price</th><th class="center">Quantity</th></tr>
     </thead>
     <tbody class="asd">
     <tr  th:each="item: ${items}">
         <td th:text="${item.name}"></td>
+        <td th:text="${item.type}"></td>
         <td th:text="${item.description}"></td>
         <td th:text="${item.priceWithValute()}" class="center"></td>
         <td th:text="${item.quantityOfStock}" class="center"></td>

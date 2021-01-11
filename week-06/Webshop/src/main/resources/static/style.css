@@ -70,3 +70,6 @@ tbody{
 form{
     display: inline-block;
 }
+.more{
+    float: right;
+}
