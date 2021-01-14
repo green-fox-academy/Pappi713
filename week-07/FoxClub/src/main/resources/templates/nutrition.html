@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<ul>
+    <li><a th:href="@{/}">Informations</a></li>
+    <li><a th:href="@{/nutrition}">Nutrition Store</a></li>
+    <li><a th:href="@{/updade-trick-list}">Trick Center</a></li>
+</ul>
+<form action="updade-food-drink" method="post">
+<label for="food">Food:</label>
+<select name="food" id="food">
+    <option>Cheese</option>
+    <option>Hamburger</option>
+    <option>Salad</option>
+    <option>Pizza</option>
+</select>
+<label for="drink">Drink:</label>
+<select name="drink" id="drink">
+    <option>Tea</option>
+    <option>Wine</option>
+    <option>Cola</option>
+    <option>Beer</option>
+</select>
+<button type="submit">Change</button>
+</form>
+</body>
+</html>

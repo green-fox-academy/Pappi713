@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<ul>
+    <li><a th:href="@{/}">Informations</a></li>
+    <li><a th:href="@{/nutrition}">Nutrition Store</a></li>
+    <li><a th:href="@{/updade-trick-list}">Trick Center</a></li>
+</ul>
+<img src="greenfox.png" alt="this is a fox">
+<form action="/login" method="get">
+    <button>Change Fox</button>
+</form>
+<p>This is <span th:text="${fox.name}"></span>  Currently living on <span th:text="${fox.food}"></span> and <span th:text="${fox.drink}"></span>. He knows <span th:text="${numberOfTricks}"></span> tricks</p>
+<h2>Known tricks:</h2>
+<ul th:if="${numberOfTricks != 0}" th:each="trick: ${fox.getListOfTricks()}">
+    <li th:text="${trick}"></li>
+</ul>
+<p th:if="${numberOfTricks == 0}">I don't know any tricks yet. Teach me some."</p>
+</body>
+</html>

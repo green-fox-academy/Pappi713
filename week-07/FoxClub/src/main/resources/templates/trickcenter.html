@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<ul>
+    <li><a th:href="@{/}">Informations</a></li>
+    <li><a th:href="@{/nutrition}">Nutrition Store</a></li>
+    <li><a th:href="@{/updade-trick-list}">Trick Center</a></li>
+</ul>
+<form action="updade-trick-list" method="post">
+    <label for="trick">Tricks:</label>
+    <select name="trick" id="trick">
+        <option>Walk</option>
+        <option>Sky Divie</option>
+        <option>Cry</option>
+        <option>Burn out</option>
+    </select>
+    <button type="submit">Add trick</button>
+</form>
+</body>
+</html>
