@@ -13,16 +13,20 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Fox {
+public class Dog {
     private String name;
     private List<String> listOfTricks =new ArrayList<>();
     private String food ;
     private String drink;
+    private DogStats stats;
+    private Integer upgradePoints;
 
-    public Fox(String name){
+    public Dog(String name){
         this.name=name;
         this.food="Bread";
         this.drink="Water";
+        this.stats=new DogStats();
+        this.upgradePoints=5;
     }
 
     public void addTrick(String trick){

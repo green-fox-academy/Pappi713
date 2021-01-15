@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<h1>Welcome to Programmer Fox Club!</h1>
-<p>Please provide a name, so you can associate it to your pet!</p>
+<body style="background-color: bisque">
+<h1>Welcome to Dungeons & Doggos!</h1>
+<p>Please provide a name, so you can associate it to your litle soldier!</p>
 <form action="/login" method="post">
     <label for="name">Name</label><input type="text" id="name" name="name" required="required">
     <button type="submit">GO</button>
 </form>
+<br>
 <table>
 <thead>
 <tr>
     <th>Name</th>
     <th>Food</th>
     <th>Drink</th>
+    <th>Level</th>
 </tr>
 </thead>
-<tr th:each="fox: ${fixlist}">
-    <td th:text="${fox.name}"></td>
-    <td th:text="${fox.food}"></td>
-    <td th:text="${fox.drink}"></td>
+<tr th:each="dog: ${fixlist}">
+    <td th:text="${dog.name}"></td>
+    <td th:text="${dog.food}"></td>
+    <td th:text="${dog.drink}"></td>
+    <td th:text="${dog.getStats().lvl}"></td>
 </tr>
 </table>
 </body>

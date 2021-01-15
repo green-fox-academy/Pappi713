@@ -5,19 +5,51 @@
     <meta charset="UTF-8">
     <title>Index</title>
 </head>
-<body>
+<body style="background-color: bisque">
+<h1>Dungeons & Doggos</h1>
 <ul>
     <li><a th:href="@{/}">Informations</a></li>
     <li><a th:href="@{/nutrition}">Nutrition Store</a></li>
     <li><a th:href="@{/updade-trick-list}">Trick Center</a></li>
 </ul>
-<img src="greenfox.png" alt="this is a fox">
+<div class="flex-content" style="margin-left: 550px">
+    <p>Developer tool:</p>
+    <form action="/lvl-up" method="get"><button type="submit" th:if="${dog.getStats().lvl < 20}">Level UP</button></form>
+</div>
+<p th:text="'Available upgrade points: '+${dog.upgradePoints}"></p>
+<table>
+    <tr><th></th><th>Stats</th></tr>
+    <tr>
+        <td rowspan="6"><img src="doggo.jpg" alt="this is a dog"></td>
+        <td th:text="'Current Lvl: '+${dog.getStats().lvl}"></td>
+    </tr>
+    <tr>
+        <td th:text="'Current HP: '+${dog.getStats().HP}"></td>
+    </tr>
+    <tr>
+        <td th:text="'Defense Rating: '+${dog.getStats().DP}"></td>
+    </tr>
+    <tr>
+        <td th:text="'Strength: '+${dog.getStats().str}"></td>
+        <td><form action="/increase-str" method="get"><button type="submit" th:if="${dog.upgradePoints > 0}">+</button></form></td>
+    </tr>
+    <tr>
+        <td th:text="'Dexterity: '+${dog.getStats().dex}"></td>
+        <td><form action="/increase-dex" method="get"><button type="submit" th:if="${dog.upgradePoints > 0}">+</button></form></td>
+    </tr>
+    </tr>
+    <tr>
+        <td th:text="'Intelligence: '+${dog.getStats().int}"></td>
+        <td><form action="/increase-int" method="get"><button type="submit" th:if="${dog.upgradePoints > 0}">+</button></form></td>
+    </tr>
+</table>
 <form action="/login" method="get">
-    <button>Change Fox</button>
+    <button>Change Doggo</button>
 </form>
-<p>This is <span th:text="${fox.name}"></span>  Currently living on <span th:text="${fox.food}"></span> and <span th:text="${fox.drink}"></span>. He knows <span th:text="${numberOfTricks}"></span> tricks</p>
+<p>This is <span th:text="${dog.name}"></span> Currently living on <span th:text="${dog.food}"></span> and <span
+        th:text="${dog.drink}"></span>. He knows <span th:text="${numberOfTricks}"></span> tricks</p>
 <h2>Known tricks:</h2>
-<ul th:if="${numberOfTricks != 0}" th:each="trick: ${fox.getListOfTricks()}">
+<ul th:if="${numberOfTricks != 0}" th:each="trick: ${dog.getListOfTricks()}">
     <li th:text="${trick}"></li>
 </ul>
 <p th:if="${numberOfTricks == 0}">I don't know any tricks yet. Teach me some."</p>

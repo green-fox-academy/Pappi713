@@ -1,6 +1,6 @@
 package com.greenfoxacademy.club.services;
 
-import com.greenfoxacademy.club.model.Fox;
+import com.greenfoxacademy.club.model.Dog;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 
@@ -11,36 +11,49 @@ import java.util.Optional;
 @Service
 public class InformationService {
     @Getter
-    private List<Fox> foxList;
+    private List<Dog> dogList;
 
     public InformationService() {
-        this.foxList = new ArrayList<>();
-        foxList.add(new Fox("Mr. Fox"));
+        this.dogList = new ArrayList<>();
+        dogList.add(new Dog("Mr. Wuf"));
     }
 
-    public Fox piciFastFox(String name) {
-        Fox selectedFox = foxList.stream().filter(f -> f.getName().equals(name)).findAny().orElse(new Fox(name));
-        return selectedFox;
+    public Dog piciFastDog(String name) {
+        Dog selectedDog = dogList.stream().filter(f -> f.getName().equals(name)).findAny().orElse(new Dog(name));
+        return selectedDog;
     }
-    public void addFox(String name){
-        Fox newFox = new Fox(name);
-        Optional<Fox> selectedFox = foxList.stream().filter(f -> f.getName().equals(name)).findAny();
-        if(!selectedFox.isPresent()){
-            foxList.add(newFox);
+    public void addDog(String name){
+        Dog newDog = new Dog(name);
+        Optional<Dog> selectedDog = dogList.stream().filter(f -> f.getName().equals(name)).findAny();
+        if(!selectedDog.isPresent()){
+            dogList.add(newDog);
         }
     }
-    public void updateNutrition(String food, String drink, Fox fox){
-            for(Fox foxy:foxList){
-                if(foxy.getName().equals(fox.getName())){
-                    foxy.setFood(food);
-                    foxy.setDrink(drink);
+    public void updateNutrition(String food, String drink, Dog dog){
+            for(Dog dogy: dogList){
+                if(dogy.getName().equals(dog.getName())){
+                    dogy.setFood(food);
+                    dogy.setDrink(drink);
                 }
         }
     }
-    public void addTrick(String trick, Fox fox){
-        for(Fox foxy:foxList){
-            if(foxy.getName().equals(fox.getName())){
-                foxy.addTrick(trick);
+    public void addTrick(String trick, Dog dog){
+        for(Dog dogy: dogList){
+            if(dogy.getName().equals(dog.getName())){
+                dogy.addTrick(trick);
+            }
+        }
+    }
+    public void updateStat(Dog dog){
+        for(Dog dogy : dogList){
+            if(dogy.getName().equals(dog.getName())){
+                dogy.getStats().setStr(dog.getStats().getStr());
+                dogy.getStats().setDex(dog.getStats().getDex());
+                dogy.getStats().setInt(dog.getStats().getInt());
+                dogy.getStats().setHP(dog.getStats().getHP());
+                dogy.getStats().setLvl(dog.getStats().getLvl());
+                dogy.setUpgradePoints(dog.getUpgradePoints());
+
             }
         }
     }
