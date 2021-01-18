@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>toDolist</title>
+</head>
+<style>
+    td{
+        border: 1px solid black;
+    }
+</style>
+<body>
+<H1>Add new todo</H1>
+<form action="/add" method="post">
+    <input type="text" name="title" id="title">
+    <button type="submit">Add task</button>
+</form>
+
+</body>
