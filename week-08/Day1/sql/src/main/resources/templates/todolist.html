@@ -12,6 +12,13 @@
 </style>
 <body>
 <H1>Todos for today</H1>
+<div class="searchengine">
+    <form action="/search" method="post">
+        <h3>Search for something</h3>
+        <label for="search">Search for:</label><input type="text" name="search" id="search"><button type="submit">Search</button>
+    </form>
+</div>
+
 <a th:href="@{/add}">Add new task</a>
 <table><tr><th>ID</th><th>Title</th><th>Urgent</th><th>Done</th></tr>
     <tr th:each="todo: ${todos}">
@@ -19,11 +26,26 @@
         <td th:text="${todo.getTitle()}"></td>
         <td th:text="${todo.getUrgent()}"></td>
         <td th:text="${todo.getDone()}"></td>
-        <td><a th:href="'/'+${todo.getID()}+'/delete'">delete</a></td>
+        <td>
+            <a th:href="'/' + ${todo.getID()} + '/delete'">delete</a>
+        </td>
+        <td>
+            <a th:href="'/' + ${todo.getID()} + '/edit'">edit</a>
+        </td>
     </tr>
 </table>
-<p th:if="${doneyet.size() != 0}">Done:</p>
-<ul style="list-style-type:none;" th:if="${doneyet.size() != 0}" th:each="task: ${doneyet}">
-    <li th:text="${task.getTitle()}"></li>
-</ul>
+<h2>List of assignees</h2>
+<div class="assignees">
+    <a th:href="@{/add-assignee}">Add new assignee</a>
+<table>
+    <tr><th>Name</th><th>Email</th></tr>
+    <tr th:each="assignee: ${assignees}" >
+        <td th:text="${assignee.name}"></td>
+        <td th:text="${assignee.email}"></td>
+        <td>
+            <a th:href="'/' + ${assignee.id} + '/edit-assignee'">Edit</a>
+        </td>
+    </tr>
+</table>
+</div>
 </body>

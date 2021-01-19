@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Edit Todo</h1>
+
+<form method="post" th:action="'/edit-assignee/'+${assignee.id}">
+    <label for="name">Name</label><input name="name" id="name" th:value="${assignee.name}"><br>
+    <label for="email">Email</label><input type="email" name="email" id="email" th:value="${assignee.email}"><br>
+    <button type="submit">Edit Assignee</button>
+</form>
+</body>
+</html>

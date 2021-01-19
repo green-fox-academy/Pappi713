@@ -1,31 +1,32 @@
 package com.greenfoxacademy.mysql.model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class ToDo {
+public class Assignee {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long ID;
-    private String title;
-    private Boolean urgent=false;
-    private Boolean done=false;
+    private Long id;
+    private String name;
+    private String email;
 
-    @ManyToOne
-    @JoinColumn(name = "assignee_id", nullable = false)
-    private Assignee assignee;
+    @OneToMany(mappedBy = "assignee")
+    private List<ToDo> toDoList;
 
-    public ToDo( String title){
-        this.title=title;
+    public Assignee(String name, String email){
+        this.name=name;
+        this.email=email;
     }
+
 }
