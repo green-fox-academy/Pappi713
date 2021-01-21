@@ -30,18 +30,19 @@ public class PostController {
 
 
     @GetMapping("/")
-    public String list(Model model, @RequestParam(required = false) String number) {
+    public String list(Model model, @RequestParam(required = false, defaultValue = "1") String number) {
 
-        List<Post> postList= (List<Post>) postRepository.findAll();
-        if(number==null){
-            postList=postService.orderedPostListByScore(postList).stream().skip(0).limit(4).collect(Collectors.toList());
-        }
-        else{
-            Integer selector=Integer.parseInt(number);
-            postList=postService.limit(selector-1);
+        List<Post> postList = (List<Post>) postRepository.findAll();
+        if (number == null) {
+            postList = postService.orderedPostListByScore(postList).stream().skip(0).limit(4).collect(Collectors.toList());
+        } else {
+            Integer selector = Integer.parseInt(number);
+            postList = postService.limit(selector - 1);
         }
         model.addAttribute("postlist", postList);
-        model.addAttribute("numberOfPagesList",postService.numberOfpages());
+        model.addAttribute("numberOfPagesList", postService.numberOfpages());
+        model.addAttribute("pagenumber", number);
+        model.addAttribute("number", number);
         return "index";
     }
 
@@ -57,15 +58,15 @@ public class PostController {
     }
 
     @GetMapping("/upvote/{ID}")
-    public String upvote(@PathVariable Long ID) {
+    public String upvote(@PathVariable Long ID, @RequestParam String pageNumber) {
         postService.upvote_post(ID);
-        return "redirect:/";
+        return "redirect:/?number=" + pageNumber;
     }
 
     @GetMapping("/downvote/{ID}")
-    public String downvote(@PathVariable Long ID) {
+    public String downvote(@PathVariable Long ID, @RequestParam String pageNumber) {
         postService.downvote_post(ID);
-        return "redirect:/";
+        return "redirect:/?number=" + pageNumber;
     }
 
     @GetMapping("/show/{ID}")
