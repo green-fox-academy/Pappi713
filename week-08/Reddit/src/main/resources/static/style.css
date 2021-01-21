@@ -1,0 +1,18 @@
+td{
+    padding: 0 30px ;
+}
+
+
+textarea {
+    resize: none;
+}
+body{
+    /*background-color: magenta;*/
+}
+.datatanle{
+    data-pagination:"false";
+    data-striped: "true";
+    data-bordered: "true";
+    data-loader-class:"bg-info";
+    data-border-color:"primary";
+}

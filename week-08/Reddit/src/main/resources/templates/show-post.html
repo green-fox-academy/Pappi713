@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Actual post</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<h2><a href="/">Back to the main page</a></h2>
+<span>Actual score of the post: </span><span contenteditable="false" th:text="${post.score}"></span><br>
+<label for="title">Title</label><input type="text" contenteditable="false" th:field="${post.title}" id="title"
+                                       name="title" readonly><br>
+<label for="content">Content</label><br>
+<textarea rows="5" cols="60" id="content" name="content" readonly th:field="${post.content}"></textarea><br>
+</body>
+</html>
