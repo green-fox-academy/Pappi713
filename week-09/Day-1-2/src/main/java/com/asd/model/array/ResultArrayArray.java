@@ -1,4 +1,4 @@
-package com.asd.model;
+package com.asd.model.array;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
